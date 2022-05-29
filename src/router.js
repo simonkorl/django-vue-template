@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueDemo from '@/components/VueDemo'
 import Messages from '@/components/Messages'
+import Elements from '@/components/Elements'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/messages',
       name: 'messages',
       component: Messages
+    },
+    {
+      path: '/element',
+      name: 'element',
+      component: Elements
     }
   ]
 })
