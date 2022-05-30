@@ -1,5 +1,11 @@
 # Django Vue Template ✌️ 🐍
 
+run this before running the code
+
+```sh
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+
 ![Vue Logo](/src/assets/logo-vue.png "Vue Logo")
 ![Django Logo](/src/assets/logo-django.png "Django Logo")
 

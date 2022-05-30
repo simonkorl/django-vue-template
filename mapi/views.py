@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView
 from django.views.decorators.cache import never_cache
 from rest_framework import viewsets
+from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse
 
 from .models import Message, MessageSerializer
 
@@ -16,4 +18,6 @@ class MessageViewSet(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
 
-
+def getNews(request):
+    print(request.payload)
+    return HttpResponse(request.payload)

@@ -33,8 +33,9 @@
     </el-row>
     <el-row id="pieces" type="flex" justify="center">
         <el-col :span="18">
-        <Newspiece 
+        <Newspiece
           v-for="news in newsList"
+            :key="news.title"
             :title="news.title"
             :img-src="news.imgSrc"
             :main-text="news.mainText"
@@ -48,6 +49,7 @@
 
 <script>
 import Newspiece from '@/components/Newspiece'
+import newsService from '@/services/newsService'
 export default {
   name: 'Elements',
   methods: {
@@ -66,6 +68,7 @@ export default {
         }
         this.input3 = '';
         // TODO: do search
+      newsService.fetchNews(this.dynamicTags);
     },
     handleClose(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
