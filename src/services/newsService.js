@@ -1,11 +1,9 @@
 import api from '@/services/api'
 
 export default {
-  fetchNews(keywords) {
-    // eslint-disable-next-line
-    console.log(api.post(`news/`, {keywords: keywords})
-                   .then(response => response.data))
-    return;
+  fetchNews(payload) {
+    return api.post(`news/`, payload)
+        .then(response => response.data);
   },
   // postMessage(payload) {
   //   return api.post(`messages/`, payload)

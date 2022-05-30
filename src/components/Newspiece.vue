@@ -7,7 +7,7 @@
     </div>
     <div>
       <el-row justify="left">
-        {{author}}
+        {{authors.join(' ')}}
       </el-row>
       <el-row>
         {{time}}
@@ -52,9 +52,9 @@ export default {
       type:String,
       default: "2020-06-02"
     },
-    author: {
-      type: String,
-      default: "Unclear"
+    authors: {
+      type: Array,
+      default: () => { return ["Unclear"]}
     }
   },
   methods: {

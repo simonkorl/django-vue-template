@@ -15,5 +15,5 @@ urlpatterns = [
     # http://localhost:8000/api/<router-viewsets>
     path('api/', include(router.urls)),
 
-    path('api/news', views.getNews)
+    path('api/news/', views.getNews)
 ]
