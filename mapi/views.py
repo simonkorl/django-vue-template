@@ -35,7 +35,14 @@ def getNews(request):
     return JsonResponse(app_search.search(
         engine_name="my-search-engine",
         body={
-            "query": '+'.join(body['keywords'])
+            "query": '+'.join(body['keywords']),
+            "page": {
+                "current": body['currentPage']
+            },
+            "sort": [
+                {"_score": "desc"},
+                {"date_publish": "desc"},
+                ]
         }
     ))
     # print(app_search.search(

@@ -1,7 +1,10 @@
 import newsService from '@/services/newsService'
 
 const state = {
-  newsList: []
+  newsList: [],
+  totalPages: 0,
+  pageSize: 10,
+  totalResults: 0,
 }
 
 const getters = {
@@ -45,6 +48,9 @@ const mutations = {
             "id": result.id.raw
         });
     });
+    state.totalPages = news.meta.page.total_pages;
+    state.totalResults = news.meta.page.total_results;
+    state.pageSize = news.meta.page.size;
     // eslint-disable-next-line
     console.log(newsList)
     state.newsList = newsList

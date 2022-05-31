@@ -2,7 +2,7 @@
   <el-card id="news-piece" show="hover">
     <div slot="header">
       <el-row>
-          <h1> {{title}} </h1>
+          <a :href="url"><h1> {{title}} </h1></a>
       </el-row>
     </div>
     <div>
@@ -55,6 +55,10 @@ export default {
     authors: {
       type: Array,
       default: () => { return ["Unclear"]}
+    },
+    url: {
+      type: String,
+      default: ""
     }
   },
   methods: {
